@@ -32,3 +32,4 @@ Run `nx graph` to see a diagram of the dependencies of the projects.
 - https://ui.shadcn.com/
 - https://github.com/shadcn/taxonomy
 - https://nextjs.org/docs/advanced-features/react-18/server-components
+- https://nx.dev/recipes/other/using-tailwind-css-in-react
