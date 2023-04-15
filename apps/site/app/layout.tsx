@@ -1,13 +1,13 @@
 import { Inter as FontSans } from 'next/font/google';
 
 import { siteConfig } from '../config/site';
-import { getAbsoluteUrl } from '../utils';
+import { classNames, getAbsoluteUrl } from '../utils';
 
-import '../pages/styles.css';
+import './styles.css';
 
 const fontSans = FontSans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sans',
 });
 
 export const metadata = {
@@ -69,7 +69,13 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={fontSans.className}>
+    <html
+      lang="en"
+      className={classNames(
+        'bg-white font-sans text-slate-900 antialiased',
+        fontSans.variable
+      )}
+    >
       <body className="min-h-screen">{children}</body>
     </html>
   );

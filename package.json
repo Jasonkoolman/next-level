@@ -8,9 +8,11 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "15.9.2",
+    "clsx": "^1.2.1",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "tailwind-merge": "^1.12.0",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
