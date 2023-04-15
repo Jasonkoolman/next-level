@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "site:dev": "nx serve site",
-    "site:build": "nx build site"
+    "dev": "nx serve site"
   },
   "private": true,
   "workspaces": [
@@ -13,7 +12,8 @@
   "dependencies": {
     "@nrwl/next": "15.9.2",
     "clsx": "^1.2.1",
-    "next": "13.3.0",
+    "lucide-react": "^0.145.0",
+    "next": "13.3.1-canary.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwind-merge": "^1.12.0",

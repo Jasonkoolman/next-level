@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nxl/site/common": ["libs/site/common/src/index.ts"],
       "@nxl/site/ui": ["libs/site/ui/src/index.ts"]
     }
   },
