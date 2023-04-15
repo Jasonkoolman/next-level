@@ -17,15 +17,21 @@ Make sure to install the dependencies:
 
 `npm install`
 
-## Development server
+### Development server
 
 Run `nx serve site` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-## Understand this workspace
+### Understand this workspace
 
 Run `nx graph` to see a diagram of the dependencies of the projects.
 
-### Resources & inspiration
+## Cheatsheet
+
+Common CLI commands that might come in handy:
+
+- Generate UI component: `npx nx g @nrwl/react:component {NAME} --project=site-ui`
+
+## Resources & inspiration
 
 - https://beta.nextjs.org/docs
 - https://blog.nrwl.io/create-a-next-js-web-app-with-nx-bcf2ab54613

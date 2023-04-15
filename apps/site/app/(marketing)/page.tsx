@@ -1,3 +1,5 @@
+import { Button } from '@nxl/site/ui';
+
 export default function HomePage() {
   return (
     <div className="bg-gray-50">
@@ -5,6 +7,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Silence is golden
         </h2>
+        <Button />
       </div>
     </div>
   );
