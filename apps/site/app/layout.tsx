@@ -1,4 +1,5 @@
 import { Inter as FontSans } from 'next/font/google';
+
 import { siteConfig } from '../config/site';
 import { getAbsoluteUrl } from '../utils';
 
