@@ -29,7 +29,8 @@
       "configurations": {
         "development": {
           "buildTarget": "site:build:development",
-          "dev": true
+          "dev": true,
+          "port": 4200
         },
         "production": {
           "buildTarget": "site:build:production",
