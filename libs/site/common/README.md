@@ -1,6 +1,6 @@
 # site-common
 
-This library was generated with [Nx](https://nx.dev).
+Common utilities and configuration for the website.
 
 ## Building
 

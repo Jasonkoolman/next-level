@@ -1,6 +1,8 @@
 # site-ui
 
-This library was generated with [Nx](https://nx.dev).
+UI component library for the website.
+
+> This library uses deep imports instead of a barrel file to enable tree-shaking (see `tsconfig.base.json`)
 
 ## Running unit tests
 

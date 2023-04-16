@@ -6,6 +6,7 @@
     "dev": "npm run site:serve",
     "site:serve": "nx serve site",
     "site:build": "nx build site",
+    "site:test": "nx test site",
     "db:serve": "pscale connect nxl-db acceptance",
     "db:studio": "npx prisma studio"
   },
