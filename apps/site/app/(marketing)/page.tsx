@@ -1,4 +1,6 @@
-import { Button } from '@nxl/site/ui';
+import Link from 'next/link';
+
+import { Button } from '@nxl/site/ui/button';
 
 export default function HomePage() {
   return (
@@ -7,6 +9,8 @@ export default function HomePage() {
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Silence is golden
         </h2>
+        <Button>Button</Button>
+        <Link href="/login">Login</Link>
       </div>
     </div>
   );

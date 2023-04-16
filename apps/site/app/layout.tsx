@@ -1,7 +1,6 @@
 import { Inter as FontSans } from 'next/font/google';
 
-import { classNames, siteConfig } from '@nxl/site/common';
-import { getAbsoluteUrl } from '../utils';
+import { classNames, getAbsoluteUrl, siteConfig } from '@nxl/site/common';
 import './styles.css';
 
 const fontSans = FontSans({

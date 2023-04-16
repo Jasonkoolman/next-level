@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@nxl/site/common": ["libs/site/common/src/index.ts"],
-      "@nxl/site/ui": ["libs/site/ui/src/index.ts"]
+      "@nxl/site/common/lib/*": ["libs/site/common/src/lib/*"],
+      "@nxl/site/ui/*": ["libs/site/ui/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
