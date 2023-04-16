@@ -2,15 +2,17 @@
 
 A production grade, open source application based on a state-of-the-art technology stack.
 
-- :zap: [Nx.dev](https://nx.dev)
-- :zap: [React 18](https://react.dev/)
-- :zap: [Next.js 13](https://nextjs.org/)
-- :zap: [Next Auth](https://next-auth.js.org/)
-- :zap: [Node.js](https://nodejs.org/en)
-- :zap: [Radix UI](https://www.radix-ui.com/)
-- :zap: [Tailwind CSS](https://tailwindcss.com/)
-- :zap: [Jest](https://jestjs.io/)
-- :zap: [Cypress](https://www.cypress.io/)
+- [Nx.dev](https://nx.dev)
+- [React 18](https://react.dev/)
+- [Next.js 13](https://nextjs.org/)
+- [Next Auth](https://next-auth.js.org/)
+- [Node.js](https://nodejs.org/en)
+- [Radix UI](https://www.radix-ui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Hook Form](https://react-hook-form.com/)
+- [Jest](https://jestjs.io/)
+- [Cypress](https://www.cypress.io/)
+- [Zod](https://github.com/colinhacks/zod)
 
 > Be aware: this project is work in progress
 
