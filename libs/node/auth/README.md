@@ -2,6 +2,12 @@
 
 This library was generated with [Nx](https://nx.dev).
 
+## Usage
+
+```ts
+import { authOptions, getCurrentUser, getSession } from '@nxl/node/auth';
+```
+
 ## Building
 
 Run `nx build node-auth` to build the library.

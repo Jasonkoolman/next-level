@@ -1,6 +1,12 @@
 # node-db
 
-This library was generated with [Nx](https://nx.dev).
+Library for communicating with the database.
+
+## Usage
+
+```ts
+import { db } from '@nxl/node/db';
+```
 
 ## Building
 

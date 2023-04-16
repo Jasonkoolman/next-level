@@ -55,7 +55,7 @@ Common CLI commands that might come in handy:
 - https://authjs.dev/reference/adapter/prisma
 - https://github.com/joselevelsup/nx-trpc-nextjs-starter/
 
-## Gotcha's
+## Caveats
 
 - We need to add deep imports for libraries (see [issue](https://github.com/nrwl/nx/issues/3069) and [issue](https://github.com/vercel/next.js/issues/12557#issuecomment-1427088366)) to only load the code when imported.
 
