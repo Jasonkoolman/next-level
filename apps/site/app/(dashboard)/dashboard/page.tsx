@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import { getCurrentUser } from '@nxl/site/common/lib/session';
+import { getCurrentUser } from '@nxl/node/auth';
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();

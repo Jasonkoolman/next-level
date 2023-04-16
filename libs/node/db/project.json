@@ -1,0 +1,26 @@
+{
+  "name": "node-db",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/node/db/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/node/db",
+        "main": "libs/node/db/src/index.ts",
+        "tsConfig": "libs/node/db/tsconfig.lib.json",
+        "assets": ["libs/node/db/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/node/db/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

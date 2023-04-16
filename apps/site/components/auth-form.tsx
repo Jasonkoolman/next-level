@@ -37,15 +37,17 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
   async function onSubmit(data: FormData) {
     setIsLoading(true);
 
-    const signInResult = await signIn('email', {
+    const response = await signIn('email', {
       email: data.email.toLowerCase(),
       redirect: false,
       callbackUrl: searchParams?.get('from') || '/dashboard',
     });
 
+    const isSuccess = Boolean(response?.ok && !response?.error);
+
     setIsLoading(false);
 
-    if (signInResult?.error) {
+    if (!isSuccess) {
       return toast({
         title: 'Something went wrong.',
         description: 'Your sign in request failed. Please try again.',

@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nxl/node/auth": ["libs/node/auth/src/index.ts"],
+      "@nxl/node/db": ["libs/node/db/src/index.ts"],
       "@nxl/site/common": ["libs/site/common/src/index.ts"],
-      "@nxl/site/common/lib/*": ["libs/site/common/src/lib/*"],
       "@nxl/site/ui/*": ["libs/site/ui/src/*"]
     }
   },
