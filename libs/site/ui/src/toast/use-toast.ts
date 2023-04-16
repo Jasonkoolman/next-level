@@ -85,12 +85,10 @@ export const reducer = (state: State, action: Action): State => {
         ),
       };
 
-    case 'DISMISS_TOAST':
-      // eslint-disable-next-line no-case-declarations
+    case 'DISMISS_TOAST': {
       const { toastId } = action;
 
-      // ! Side effects ! - This could be extracted into a dismissToast() action,
-      // but I'll keep it here for simplicity
+      // Side effect. This could be extracted into a dismissToast() action
       if (toastId) {
         addToRemoveQueue(toastId);
       } else {
@@ -110,6 +108,8 @@ export const reducer = (state: State, action: Action): State => {
             : t
         ),
       };
+    }
+
     case 'REMOVE_TOAST':
       if (action.toastId === undefined) {
         return {
