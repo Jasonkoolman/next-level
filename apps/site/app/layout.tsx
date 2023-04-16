@@ -1,7 +1,9 @@
 import { Inter as FontSans } from 'next/font/google';
 
-import { classNames, getAbsoluteUrl, siteConfig } from '@nxl/site/common';
+import { getAbsoluteUrl, siteConfig } from '@nxl/site/common';
 import './styles.css';
+import { ModeToggle } from '../components/mode-toggle';
+import { ThemeProvider } from '../components/theme-provider';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -69,12 +71,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      className={classNames(
-        'bg-white font-sans text-slate-900 antialiased',
-        fontSans.variable
-      )}
+      // Suppress hydration warnings for light/dark mode, as the
+      // theme is set in the browser and not known on the server.
+      suppressHydrationWarning
     >
-      <body className="min-h-screen">{children}</body>
+      <body className={fontSans.variable}>
+        <ThemeProvider attribute="class" enableSystem>
+          <ModeToggle />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
