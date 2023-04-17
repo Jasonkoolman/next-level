@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signIn } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
@@ -23,6 +23,9 @@ type FormData = z.infer<typeof userAuthSchema>;
 const toast = (args: any) => alert(args.title);
 
 export function AuthForm({ className, ...props }: AuthFormProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const {
     register,
     handleSubmit,
@@ -32,7 +35,6 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
   });
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
-  const searchParams = useSearchParams();
 
   async function onSubmit(data: FormData) {
     setIsLoading(true);
@@ -60,6 +62,12 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
       description: 'We sent you a login link. Be sure to check your spam too.',
     });
   }
+
+  const signInWithGitHub = async () => {
+    setIsGitHubLoading(true);
+    await signIn('github');
+    router.push('/dashboard');
+  };
 
   return (
     <div className={classNames('grid gap-6', className)} {...props}>
@@ -102,10 +110,7 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
       <Button
         type="button"
         variant="outline"
-        onClick={() => {
-          setIsGitHubLoading(true);
-          signIn('github');
-        }}
+        onClick={signInWithGitHub}
         disabled={isLoading || isGitHubLoading}
       >
         {isGitHubLoading ? <div>spinner</div> : <div>icon</div>} Github
