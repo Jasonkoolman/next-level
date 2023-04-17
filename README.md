@@ -1,3 +1,5 @@
+![Next Level Logo](./apps/site/public/logo-icon.svg)
+
 # Next Level
 
 A production grade, open source application based on a state-of-the-art technology stack.
@@ -41,6 +43,18 @@ Common CLI commands that might come in handy:
 - Generate UI component: `nx g @nrwl/react:component {name} --project=site-ui`
 - Create library: `nx g @nrwl/js:lib {name} --directory=site`
 
+## Caveats
+
+**The client, the server, and tree-shaking**
+
+We need to add deep imports for libraries (see [issue](https://github.com/nrwl/nx/issues/3069) and [issue](https://github.com/vercel/next.js/issues/12557#issuecomment-1427088366)) to only load the code when imported.
+
+## FAQ
+
+**Why not keep all logic in the Next.js app itself?**
+
+The Nx team has suggested that most of the code should live in libraries, even if it's application-specific. That way you can test and build it independently of the application. In Next Level, all libraries related to the application `apps/site` live in the `libs` folder (i.e. `libs/site/ui`). This allows for easy scaling when creating more applications (a dedicated API using Nest.js, for example). You could, however, move code or projects as you seem fit using [@nrwl/workspace:move](https://nx.dev/packages/workspace/generators/move).
+
 ## Resources & inspiration
 
 - https://beta.nextjs.org/docs
@@ -54,13 +68,3 @@ Common CLI commands that might come in handy:
 - https://planetscale.com/docs/tutorials/prisma-quickstart
 - https://authjs.dev/reference/adapter/prisma
 - https://github.com/joselevelsup/nx-trpc-nextjs-starter/
-
-## Caveats
-
-- We need to add deep imports for libraries (see [issue](https://github.com/nrwl/nx/issues/3069) and [issue](https://github.com/vercel/next.js/issues/12557#issuecomment-1427088366)) to only load the code when imported.
-
-## FAQ
-
-**Why move application-specific logic into libs?**
-
-The Nx team has suggested that 99% of code should live in libraries, even if it's application-specific. That way you can test it independently of the application. In Next Level, all libraries related to the application `apps/site` live in the `libs/site` folder (i.e. `libs/site/ui`). This allows for easy scaling when creating more appplications (a dedicated API using Nest.js, for example). You could, however, move projects using [@nrwl/workspace:move](https://nx.dev/packages/workspace/generators/move).

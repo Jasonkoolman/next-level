@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <title>Next Level</title>
+    <rect width="64" height="64" fill="#111111"/>
+    <path d="M44 27L25 8H8L56 56V8H44V27Z" fill="white"/>
+    <path d="M33 48H16V31L33 48Z" fill="white"/>
+</svg>
