@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signIn } from 'next-auth/react';
@@ -11,6 +11,7 @@ import { classNames } from '@nxl/site/common';
 import { Button } from '@nxl/site/ui/button';
 import { Input } from '@nxl/site/ui/input';
 import { Label } from '@nxl/site/ui/label';
+import { useToast } from '@nxl/site/ui/toast';
 
 export const userAuthSchema = z.object({
   email: z.string().email(),
@@ -20,25 +21,21 @@ type AuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 
 type FormData = z.infer<typeof userAuthSchema>;
 
-const toast = (args: any) => alert(args.title);
-
 export function AuthForm({ className, ...props }: AuthFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { toast } = useToast();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(userAuthSchema),
   });
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
 
   async function onSubmit(data: FormData) {
-    setIsLoading(true);
-
     const response = await signIn('email', {
       email: data.email.toLowerCase(),
       redirect: false,
@@ -46,8 +43,6 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
     });
 
     const isSuccess = Boolean(response?.ok && !response?.error);
-
-    setIsLoading(false);
 
     if (!isSuccess) {
       return toast({
@@ -57,7 +52,7 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
       });
     }
 
-    return toast({
+    toast({
       title: 'Check your email',
       description: 'We sent you a login link. Be sure to check your spam too.',
     });
@@ -84,7 +79,7 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
-              disabled={isLoading || isGitHubLoading}
+              disabled={isSubmitting || isGitHubLoading}
               {...register('email')}
             />
             {errors?.email && (
@@ -93,8 +88,8 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
               </p>
             )}
           </div>
-          <Button disabled={isLoading}>
-            {isLoading && <div>Spinner</div>}
+          <Button disabled={isSubmitting}>
+            {isSubmitting && <div>Spinner</div>}
             Sign In with Email
           </Button>
         </div>
@@ -104,14 +99,16 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
           <span className="w-full border-t border-slate-300" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-white px-2 text-slate-600">Or continue with</span>
+          <span className="bg-background px-2 text-slate-600">
+            Or continue with
+          </span>
         </div>
       </div>
       <Button
         type="button"
         variant="outline"
         onClick={signInWithGitHub}
-        disabled={isLoading || isGitHubLoading}
+        disabled={isSubmitting || isGitHubLoading}
       >
         {isGitHubLoading ? <div>spinner</div> : <div>icon</div>} Github
       </Button>

@@ -5,12 +5,12 @@ import { classNames } from '@nxl/site/common';
 type Tags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type HeadingProps<TAs extends Tags = 'h1'> = {
-  as?: TAs;
+  as: TAs;
   children: React.ReactNode;
 } & JSX.IntrinsicElements[TAs];
 
 const Heading = React.forwardRef<HTMLParagraphElement, HeadingProps>(
-  ({ as: Tag = 'h1', className, children, ...props }, ref) => {
+  ({ as: Tag, className, children, ...props }, ref) => {
     return (
       <Tag
         className={classNames(

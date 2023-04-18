@@ -4,7 +4,7 @@ import { Select } from '.';
 
 describe('Select', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Select.Root />);
+    const { baseElement } = render(<Select />);
     expect(baseElement).toBeTruthy();
   });
 });

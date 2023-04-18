@@ -1,9 +1,9 @@
 import { Inter as FontSans } from 'next/font/google';
 
 import { getAbsoluteUrl, siteConfig } from '@nxl/site/common';
-import './styles.css';
-import { ModeToggle } from '../components/mode-toggle';
+import { Toaster } from '@nxl/site/ui/toast';
 import { ThemeProvider } from '../components/theme-provider';
+import './styles.css';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -77,8 +77,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
     >
       <body className={fontSans.variable}>
         <ThemeProvider attribute="class" enableSystem>
-          <ModeToggle />
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

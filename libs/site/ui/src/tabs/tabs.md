@@ -3,22 +3,16 @@
 ```tsx
 export function TabsDemo() {
   return (
-    <Tabs.Root defaultValue="circles" className="w-[400px]">
-      <Tabs.List>
-        <Tabs.Trigger value="circles">Circles</TabsTrigger>
-        <Tabs.Trigger value="triangles">Triangles</TabsTrigger>
-        <Tabs.Trigger value="squares">Squares</TabsTrigger>
-      </Tabs.List>
-      <Tabs.Content value="circles">
-        Circles
-      </Tabs.Content>
-      <Tabs.Content value="triangles">
-        Triangles
-      </Tabs.Content>
-      <Tabs.Content value="squares">
-        Squares
-      </Tabs.Content>
-    </Tabs.Root>
-  )
+    <Tabs defaultValue="circles" className="w-[400px]">
+      <TabsList>
+        <TabsTrigger value="circles">Circles</TabsTrigger>
+        <TabsTrigger value="triangles">Triangles</TabsTrigger>
+        <TabsTrigger value="squares">Squares</TabsTrigger>
+      </TabsList>
+      <TabsContent value="circles">Circles</TabsContent>
+      <TabsContent value="triangles">Triangles</TabsContent>
+      <TabsContent value="squares">Squares</TabsContent>
+    </Tabs>
+  );
 }
 ```

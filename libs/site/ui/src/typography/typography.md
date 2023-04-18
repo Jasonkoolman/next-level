@@ -12,6 +12,7 @@
 
 ```tsx
 <Text>Paragraph</Text>
+<Text size="xl">Paragraph</Text>
+<Text variant="muted">Paragraph</Text>
 <Text as="abbr">Abbr</Text>
-<Text className="text-xl">Extra large</Text>
 ```

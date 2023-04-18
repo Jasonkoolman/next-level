@@ -2,7 +2,7 @@
 
 # Next Level
 
-A production grade, open source application based on a state-of-the-art technology stack.
+A production grade, open source web application based on state-of-the-art technologies.
 
 - [Nx.dev](https://nx.dev)
 - [React 18](https://react.dev/)

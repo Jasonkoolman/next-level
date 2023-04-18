@@ -1,16 +1,19 @@
 import Link from 'next/link';
 
 import { Button } from '@nxl/site/ui/button';
-import { Heading } from '@nxl/site/ui/typography';
+import { Heading, Text } from '@nxl/site/ui/typography';
 
 export default function HomePage() {
   return (
-    <div>
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-        <Heading>Silence is golden</Heading>
+    <div className="container py-16">
+      <section className="mx-auto max-w-3xl">
+        <Heading as="h1">Technologies of tomorrow</Heading>
+        <Text size="2xl" variant="muted">
+          Test
+        </Text>
         <Button>Button</Button>
         <Link href="/login">Login</Link>
-      </div>
+      </section>
     </div>
   );
 }

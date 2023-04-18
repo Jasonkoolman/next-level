@@ -4,7 +4,7 @@ import { Tabs } from '.';
 
 describe('Tabs', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Tabs.Root />);
+    const { baseElement } = render(<Tabs />);
     expect(baseElement).toBeTruthy();
   });
 });

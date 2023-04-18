@@ -5,12 +5,12 @@ Multipart component
 ```tsx
 export function TooltipDemo() {
   return (
-    <Tooltip.Root>
-      <Tooltip.Trigger asChild>
+    <Tooltip>
+      <TooltipTrigger asChild>
         <Button>Trigger</Button>
-      </Tooltip.Trigger>
-      <Tooltip.Content>Content</Tooltip.Content>
-    </Tooltip.Root>
+      </TooltipTrigger>
+      <TooltipContent>Content</Tooltip.Content>
+    </Tooltip>
   );
 }
 ```

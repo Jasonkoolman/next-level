@@ -7,6 +7,10 @@ module.exports = {
     extend: {
       container: {
         center: true,
+        padding: '1.5rem',
+        screens: {
+          '2xl': '1440px',
+        },
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],

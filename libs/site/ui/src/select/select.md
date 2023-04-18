@@ -5,36 +5,36 @@ Multipart component
 ```tsx
 export function SelectDemo() {
   return (
-    <Select.Root>
-      <Select.Trigger className="w-[180px]">
-        <Select.Value placeholder="Select a fruit" />
-      </Select.Trigger>
-      <Select.Content>
-        <Select.Group>
-          <Select.Label>Fruits</Select.Label>
-          <Select.Item value="apple">Apple</Select.Item>
-          <Select.Item value="banana">Banana</Select.Item>
-          <Select.Item value="grapes">Grapes</Select.Item>
-          <Select.Item value="pineapple">Pineapple</Select.Item>
-        </Select.Group>
-        <Select.Separator />
-        <Select.Group>
-          <Select.Label>Vegetables</Select.Label>
-          <Select.Item value="aubergine">Aubergine</Select.Item>
-          <Select.Item value="broccoli">Broccoli</Select.Item>
-          <Select.Item value="courgette">Courgette</Select.Item>
-          <Select.Item value="leek">Leek</Select.Item>
-        </Select.Group>
-        <Select.Separator />
-        <Select.Group>
-          <Select.Label>Meat</Select.Label>
-          <Select.Item value="beef">Beef</Select.Item>
-          <Select.Item value="chicken">Chicken</Select.Item>
-          <Select.Item value="lamb">Lamb</Select.Item>
-          <Select.Item value="pork">Pork</Select.Item>
-        </Select.Group>
-      </Select.Content>
-    </Select.Root>
+    <Select>
+      <SelectTrigger className="w-[180px]">
+        <SelectValue placeholder="Select a fruit" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Fruits</SelectLabel>
+          <SelectItem value="apple">Apple</SelectItem>
+          <SelectItem value="banana">Banana</SelectItem>
+          <SelectItem value="grapes">Grapes</SelectItem>
+          <SelectItem value="pineapple">Pineapple</SelectItem>
+        </SelectGroup>
+        <SelectSeparator />
+        <SelectGroup>
+          <SelectLabel>Vegetables</SelectLabel>
+          <SelectItem value="aubergine">Aubergine</SelectItem>
+          <SelectItem value="broccoli">Broccoli</SelectItem>
+          <SelectItem value="courgette">Courgette</SelectItem>
+          <SelectItem value="leek">Leek</SelectItem>
+        </SelectGroup>
+        <SelectSeparator />
+        <SelectGroup>
+          <SelectLabel>Meat</SelectLabel>
+          <SelectItem value="beef">Beef</SelectItem>
+          <SelectItem value="chicken">Chicken</SelectItem>
+          <SelectItem value="lamb">Lamb</SelectItem>
+          <SelectItem value="pork">Pork</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 }
 ```

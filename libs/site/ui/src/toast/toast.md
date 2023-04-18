@@ -13,7 +13,7 @@ export function ToastDemo() {
         toast({
           title: 'Title',
           description: 'Description',
-          action: <Toast.Action altText="Action">Action</Toast.Action>,
+          action: <ToastAction altText="Action">Action</ToastAction>,
         });
       }}
     >

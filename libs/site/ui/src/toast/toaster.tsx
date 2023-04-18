@@ -1,24 +1,31 @@
 'use client';
 
-import { Close, Description, Provider, Root, Title, Viewport } from './toast';
+import {
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from './toast';
 import { useToast } from './use-toast';
 
 export function Toaster() {
   const { toasts } = useToast();
 
   return (
-    <Provider>
+    <ToastProvider>
       {toasts.map(({ id, title, description, action, ...props }) => (
-        <Root key={id} {...props}>
+        <Toast key={id} {...props}>
           <div className="grid gap-1">
-            {title && <Title>{title}</Title>}
-            {description && <Description>{description}</Description>}
+            {title && <ToastTitle>{title}</ToastTitle>}
+            {description && <ToastDescription>{description}</ToastDescription>}
           </div>
           {action}
-          <Close />
-        </Root>
+          <ToastClose />
+        </Toast>
       ))}
-      <Viewport />
-    </Provider>
+      <ToastViewport />
+    </ToastProvider>
   );
 }

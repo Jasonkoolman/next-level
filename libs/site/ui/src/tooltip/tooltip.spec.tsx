@@ -4,7 +4,7 @@ import { Tooltip } from '.';
 
 describe('Tooltip', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Tooltip.Root />);
+    const { baseElement } = render(<Tooltip />);
     expect(baseElement).toBeTruthy();
   });
 });

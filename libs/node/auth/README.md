@@ -1,6 +1,6 @@
 # node-auth
 
-This library was generated with [Nx](https://nx.dev).
+Library for handling authentication on the server.
 
 ## Usage
 
