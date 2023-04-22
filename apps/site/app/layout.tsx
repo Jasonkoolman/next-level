@@ -2,7 +2,7 @@ import { Inter as FontSans } from 'next/font/google';
 
 import { getAbsoluteUrl, siteConfig } from '@nxl/site/common';
 import { Toaster } from '@nxl/site/ui/toast';
-import { ThemeProvider } from '../components/theme-provider';
+import { ThemeProvider } from 'site/components/theme-provider';
 import './styles.css';
 
 const fontSans = FontSans({

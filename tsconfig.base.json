@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "site/*": ["apps/site/*"],
+      "site/content/generated": ["apps/site/.contentlayer/generated"],
       "@nxl/site/common": ["libs/site/common/src/index.ts"],
       "@nxl/site/ui/*": ["libs/site/ui/src/*"],
       "@nxl/node/auth": ["libs/node/auth/src/index.ts"],

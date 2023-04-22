@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import { getCurrentUser } from '@nxl/node/auth';
-import { SignOutButton } from '../../../components/sign-out-button';
+import { SignOutButton } from 'site/components/sign-out-button';
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();

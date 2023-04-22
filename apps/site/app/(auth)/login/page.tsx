@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { classNames } from '@nxl/site/common';
 import { buttonVariants } from '@nxl/site/ui/button';
-import { AuthForm } from '../../../components/auth-form';
+import { AuthForm } from 'site/components/auth-form';
 
 export const metadata: Metadata = {
   title: 'Login',

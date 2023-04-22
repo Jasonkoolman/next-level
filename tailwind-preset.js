@@ -9,7 +9,7 @@ module.exports = {
         center: true,
         padding: '1.5rem',
         screens: {
-          '2xl': '1440px',
+          '2xl': '1340px',
         },
       },
       fontFamily: {

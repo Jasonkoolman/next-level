@@ -4,10 +4,24 @@
   "sourceRoot": "apps/site",
   "projectType": "application",
   "targets": {
+    "content": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/site",
+        "commands": ["contentlayer build"],
+        "parallel": false
+      }
+    },
     "build": {
       "executor": "@nrwl/next:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
+      "dependsOn": [
+        {
+          "target": "content",
+          "projects": "self"
+        }
+      ],
       "options": {
         "root": "apps/site",
         "outputPath": "dist/apps/site"

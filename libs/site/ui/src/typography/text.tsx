@@ -10,15 +10,12 @@ const textVariants = cva(undefined, {
     },
     size: {
       'sm': 'text-sm',
-      'md': undefined,
+      'md': 'text-md',
       'lg': 'text-lg',
       'xl': 'text-xl',
       '2xl': 'text-2xl',
       '3xl': 'text-3xl',
     },
-  },
-  defaultVariants: {
-    size: 'md',
   },
 });
 
@@ -38,19 +35,33 @@ type Tags =
   | 'sup'
   | 'span';
 
-export type TextProps<TAs extends Tags = 'p'> = {
+export type TextProps<TAs extends Tags> = {
   as?: TAs;
   children: React.ReactNode;
 } & JSX.IntrinsicElements[TAs] &
   VariantProps<typeof textVariants>;
 
-const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
-  ({ as: Tag = 'p', variant, size, className, children, ...props }, ref) => {
+const Text = React.forwardRef(
+  <TAs extends Tags = 'p'>(
+    props: TextProps<TAs>,
+    ref: React.ForwardedRef<JSX.IntrinsicElements[TAs]>
+  ) => {
+    const {
+      as: Tag = 'p',
+      variant,
+      size,
+      className,
+      children,
+      ...rest
+    } = props;
+
     return (
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       <Tag
         className={classNames(textVariants({ variant, size }), className)}
         ref={ref}
-        {...props}
+        {...rest}
       >
         {children}
       </Tag>

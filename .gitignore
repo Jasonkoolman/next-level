@@ -10,6 +10,7 @@ node_modules
 
 # Next.js
 .next
+.contentlayer
 
 # Environment Variables
 .env
