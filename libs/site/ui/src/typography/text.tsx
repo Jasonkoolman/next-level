@@ -1,4 +1,5 @@
 import React from 'react';
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 import { VariantProps, cva } from 'class-variance-authority';
 
 import { classNames } from '@nxl/site/common';
@@ -35,39 +36,26 @@ type Tags =
   | 'sup'
   | 'span';
 
-export type TextProps<TAs extends Tags> = {
-  as?: TAs;
+export type TextProps = {
+  as?: Tags;
   children: React.ReactNode;
-} & JSX.IntrinsicElements[TAs] &
-  VariantProps<typeof textVariants>;
+} & VariantProps<typeof textVariants>;
 
-const Text = React.forwardRef(
-  <TAs extends Tags = 'p'>(
-    props: TextProps<TAs>,
-    ref: React.ForwardedRef<JSX.IntrinsicElements[TAs]>
-  ) => {
-    const {
-      as: Tag = 'p',
-      variant,
-      size,
-      className,
-      children,
-      ...rest
-    } = props;
+type PolymorphicText = Polymorphic.ForwardRefComponent<'p', TextProps>;
 
-    return (
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      <Tag
-        className={classNames(textVariants({ variant, size }), className)}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </Tag>
-    );
-  }
-);
+const Text = React.forwardRef((props, ref) => {
+  const { as: Tag = 'p', variant, size, className, children, ...rest } = props;
+
+  return (
+    <Tag
+      className={classNames(textVariants({ variant, size }), className)}
+      ref={ref}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  );
+}) as PolymorphicText;
 
 Text.displayName = 'Text';
 
