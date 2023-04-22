@@ -17,9 +17,9 @@ const headingVariants = cva('font-bold tracking-tight', {
       '3xl': 'text-2xl sm:text-3xl',
       '4xl': 'text-3xl sm:text-4xl',
       '5xl': 'text-4xl sm:text-5xl',
-      '6xl': 'text-4xl sm:text-6xl',
-      '7xl': 'text-5xl sm:text-7xl',
-      '8xl': 'text-5xl sm:text-8xl',
+      '6xl': 'text-4xl sm:text-5xl lg:text-6xl',
+      '7xl': 'text-5xl sm:text-6xl lg:text-7xl',
+      '8xl': 'text-5xl sm:text-8xl lg:text-8xl',
     },
   },
 });
