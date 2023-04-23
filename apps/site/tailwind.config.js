@@ -5,7 +5,10 @@ const { join } = require('path');
 module.exports = {
   presets: [require('../../tailwind-preset.js')],
   content: [
-    join(__dirname, '{app,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
+    join(
+      __dirname,
+      'src/{app,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'
+    ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
 };

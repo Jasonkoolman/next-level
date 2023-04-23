@@ -3,7 +3,7 @@ import { ChevronRightIcon } from 'lucide-react';
 
 import { siteConfig } from '@nxl/site/common';
 import { buttonVariants } from '@nxl/site/ui/button';
-import { Heading } from '@nxl/site/ui/typography';
+import { Heading, Text } from '@nxl/site/ui/typography';
 
 export default function Hero() {
   return (
@@ -15,14 +15,16 @@ export default function Hero() {
               <Heading as="h1" size="6xl" className="mt-10">
                 Next Level web application
               </Heading>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                A production grade, open source web application based on
-                state-of-the-art technologies.
-              </p>
+              <Text size="lg" variant="muted" className="mt-6">
+                A production grade, open source application based on the latest
+                technologies the web has to offer.
+              </Text>
               <div className="mt-10 flex items-center gap-x-2">
                 <Link
                   href="login"
-                  className={buttonVariants({ variant: 'primary' })}
+                  className={buttonVariants({
+                    variant: 'primary',
+                  })}
                 >
                   Explore
                 </Link>

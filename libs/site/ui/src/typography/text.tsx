@@ -7,7 +7,7 @@ import { classNames } from '@nxl/site/common';
 const textVariants = cva(undefined, {
   variants: {
     variant: {
-      muted: 'text-muted',
+      muted: 'text-muted-foreground',
     },
     size: {
       'sm': 'text-sm',

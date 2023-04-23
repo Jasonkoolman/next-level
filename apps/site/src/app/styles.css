@@ -72,6 +72,6 @@
 
 @layer base {
   body {
-    @apply min-h-screen bg-white font-sans text-gray-900 antialiased dark:bg-gray-900 dark:text-slate-50;
+    @apply min-h-screen bg-background text-foreground font-sans antialiased;
   }
 }
