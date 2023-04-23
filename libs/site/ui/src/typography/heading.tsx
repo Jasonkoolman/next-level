@@ -7,6 +7,10 @@ import { classNames } from '@nxl/site/common';
 const headingVariants = cva('font-bold tracking-tight', {
   variants: {
     variant: {
+      primary: 'text-primary-foreground',
+      secondary: 'text-secondary-foreground',
+      accent: 'text-accent-foreground',
+      muted: 'text-muted-foreground',
       gradient:
         'text-transparent bg-gradient-to-br bg-clip-text from-teal-500 via-indigo-500 to-sky-500 dark:from-teal-200 dark:via-indigo-300 dark:to-sky-500',
     },
