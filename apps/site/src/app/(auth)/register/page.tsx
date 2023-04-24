@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { classNames } from '@nxl/site/common';
 import { buttonVariants } from '@nxl/site/ui/button';
 import { AuthForm } from 'site/components/auth-form';
+import { Container } from 'site/components/layout/container';
 
 export const metadata = {
   title: 'Create an account',
@@ -11,7 +12,7 @@ export const metadata = {
 
 export default function RegisterPage() {
   return (
-    <div className="container grid h-screen w-screen flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0">
+    <Container className="grid h-screen w-screen flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0">
       <Link
         href="/login"
         className={classNames(
@@ -53,6 +54,6 @@ export default function RegisterPage() {
           </p>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }

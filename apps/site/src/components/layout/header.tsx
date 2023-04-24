@@ -2,9 +2,8 @@ import Link from 'next/link';
 
 import { Logo } from '../logo';
 import { ModeToggle } from '../mode-toggle';
+import { Container } from './container';
 import { MainNav, MainNavItem } from './main-nav';
-
-type HeaderProps = any;
 
 const navItems: MainNavItem[] = [
   {
@@ -14,21 +13,22 @@ const navItems: MainNavItem[] = [
   {
     title: 'Documentation',
     href: '/docs',
+    disabled: true,
   },
 ];
 
-export function Header(props: HeaderProps) {
+export function Header() {
   return (
     <header className="bg-background border-b border-b-slate-200 dark:border-b-gray-800">
-      <div className="container flex h-16 items-center justify-between py-4">
-        <Link href="/">
+      <Container className="flex h-16 items-center justify-between py-4">
+        <Link href="/" className="hover:opacity-80">
           <Logo />
         </Link>
         <MainNav items={navItems}></MainNav>
         <div>
           <ModeToggle />
         </div>
-      </div>
+      </Container>
     </header>
   );
 }

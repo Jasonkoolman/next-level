@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation';
 import { ChevronLeftIcon } from 'lucide-react';
 
 import { getAbsoluteUrl } from '@nxl/site/common';
+import { Heading } from '@nxl/site/ui/typography';
+import { Container } from 'site/components/layout/container';
 import { Mdx } from 'site/components/mdx';
 import { allPosts } from 'site/content/generated';
 
@@ -85,12 +87,8 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound();
   }
 
-  // const authors = post.authors.map((author) =>
-  //   allAuthors.find(({ slug }) => slug === `/authors/${author}`)
-  // );
-
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
+    <Container as="article" className="relative max-w-3xl py-6 lg:py-10">
       <Link
         href="/blog"
         className="absolute left-[-200px] top-14 hidden items-center justify-center text-sm font-medium text-slate-600 hover:text-slate-900 xl:inline-flex"
@@ -107,33 +105,9 @@ export default async function PostPage({ params }: PostPageProps) {
         <h1 className="mt-2 inline-block text-4xl font-extrabold leading-tight text-slate-900 lg:text-5xl">
           {post.title}
         </h1>
-        {/* {authors?.length ? (
-          <div className="mt-4 flex space-x-4">
-            {authors.map((author) =>
-              author ? (
-                <Link
-                  key={author._id}
-                  href={`https://twitter.com/${author.twitter}`}
-                  className="flex items-center space-x-2 text-sm"
-                >
-                  <Image
-                    src={author.avatar}
-                    alt={author.title}
-                    width={42}
-                    height={42}
-                    className="rounded-full"
-                  />
-                  <div className="flex-1 text-left leading-tight">
-                    <p className="font-medium text-slate-900">{author.title}</p>
-                    <p className="text-[12px] text-slate-600">
-                      @{author.twitter}
-                    </p>
-                  </div>
-                </Link>
-              ) : null
-            )}
-          </div>
-        ) : null} */}
+        <Heading as="h1" size="5xl">
+          {post.title}
+        </Heading>
       </div>
       {/* {post.image && (
         <Image
@@ -156,6 +130,6 @@ export default async function PostPage({ params }: PostPageProps) {
           See all posts
         </Link>
       </div>
-    </article>
+    </Container>
   );
 }

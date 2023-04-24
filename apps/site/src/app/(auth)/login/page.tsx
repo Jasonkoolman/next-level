@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { classNames } from '@nxl/site/common';
 import { buttonVariants } from '@nxl/site/ui/button';
 import { AuthForm } from 'site/components/auth-form';
+import { Container } from 'site/components/layout/container';
 
 export const metadata: Metadata = {
   title: 'Login',
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <div className="container flex h-screen w-screen flex-col items-center justify-center">
+    <Container className="flex h-screen w-screen flex-col items-center justify-center">
       <Link
         href="/"
         className={classNames(
@@ -41,6 +42,6 @@ export default function LoginPage() {
           </Link>
         </p>
       </div>
-    </div>
+    </Container>
   );
 }
