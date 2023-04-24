@@ -1,7 +1,14 @@
-import Link from 'next/link';
 import { compareDesc, format, parseISO } from 'date-fns';
 
-import { Mdx } from 'site/components/mdx';
+import { Heading, Text } from '@nxl/site/ui/typography';
+import {
+  Card,
+  CardCta,
+  CardDescription,
+  CardEyebrow,
+  CardTitle,
+} from 'site/components/card';
+import { Container } from 'site/components/layout/container';
 import { Post, allPosts } from 'site/content/generated';
 
 export const metadata = {
@@ -14,43 +21,60 @@ export default async function BlogPage() {
   });
 
   return (
-    <div className="container max-w-4xl py-6 lg:py-10">
+    <Container className="max-w-4xl py-12 sm:py-14">
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
-        <div className="flex-1 space-y-4">
-          <h1 className="inline-block text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">
+        <div className="flex-1 space-y-4 mb-12 sm:mb-14">
+          <Heading as="h1" size="5xl">
             Blog
-          </h1>
-          <p className="text-xl text-slate-600">
+          </Heading>
+          <Text variant="muted" className="sm:text-lg">
             A blog built using Contentlayer. Posts are written in MDX.
-          </p>
+          </Text>
         </div>
       </div>
-      <hr className="my-8 border-slate-200" />
-      {posts?.length ? (
-        <div className="grid gap-10 sm:grid-cols-2">
-          {posts.map((post: any, idx: any) => (
-            <PostCard key={idx} {...post} />
-          ))}
-        </div>
-      ) : (
-        <p>No posts published.</p>
-      )}
-    </div>
+      <div className="md:border-l md:border-slate-200 md:pl-6 md:dark:border-slate-700/40">
+        {posts?.length ? (
+          <div className="flex max-w-3xl flex-col space-y-16">
+            {posts.map((post) => (
+              <BlogPost key={post.slug} post={post} />
+            ))}
+          </div>
+        ) : (
+          <p>No posts published.</p>
+        )}
+      </div>
+    </Container>
   );
 }
 
-function PostCard(post: Post) {
+function BlogPost({ post }: { post: Post }) {
   return (
-    <div className="mb-6">
-      <time dateTime={post.date} className="block text-sm text-slate-600">
+    <article className="md:grid md:grid-cols-4 md:items-baseline">
+      <Card className="md:col-span-3">
+        <CardTitle href={post.slug}>{post.title}</CardTitle>
+        <CardEyebrow
+          as="time"
+          dateTime={post.date}
+          className="md:hidden"
+          decorate
+        >
+          {format(parseISO(post.date), 'LLLL d, yyyy')}
+        </CardEyebrow>
+        <CardDescription>
+          Most companies try to stay ahead of the curve when it comes to visual
+          design, but for Planetaria we needed to create a brand that would
+          still inspire us 100 years from now when humanity has spread across
+          our entire solar system.
+        </CardDescription>
+        <CardCta>Read post</CardCta>
+      </Card>
+      <CardEyebrow
+        as="time"
+        dateTime={post.date}
+        className="mt-1 hidden md:block"
+      >
         {format(parseISO(post.date), 'LLLL d, yyyy')}
-      </time>
-      <h2 className="text-lg">
-        <Link href={post.slug} className="text-blue-700 hover:text-blue-900">
-          {post.title}
-        </Link>
-      </h2>
-      <Mdx code={post.body.code} />
-    </div>
+      </CardEyebrow>
+    </article>
   );
 }
