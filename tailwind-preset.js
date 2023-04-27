@@ -1,35 +1,37 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
+const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+function getColorShades(name) {
+  return shades.reduce((obj, shade) => {
+    const key = `${name}-${shade}`;
+    return {
+      ...obj,
+      [shade]: `hsl(var(--${key}))`,
+    };
+  }, {});
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
+          ...getColorShades('primary'),
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
         },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+        subtle: {
+          DEFAULT: 'hsl(var(--subtle))',
+          foreground: 'hsl(var(--subtle-foreground))',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
@@ -39,16 +41,12 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
-      },
-      container: {
-        center: true,
-        padding: '1.5rem',
-        screens: {
-          '2xl': '1340px',
-        },
       },
     },
   },

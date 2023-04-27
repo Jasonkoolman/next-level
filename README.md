@@ -68,3 +68,4 @@ The Nx team has suggested that most of the code should live in libraries, even i
 - https://planetscale.com/docs/tutorials/prisma-quickstart
 - https://authjs.dev/reference/adapter/prisma
 - https://github.com/joselevelsup/nx-trpc-nextjs-starter/
+- https://www.youtube.com/watch?v=hgglCqAXHuE

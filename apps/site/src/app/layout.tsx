@@ -76,6 +76,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       suppressHydrationWarning
     >
       <body className={fontSans.variable}>
+        <a
+          href="#content"
+          className="text-sm font-semibold transition left-0 z-50 bg-border text-foreground absolute px-3 py-2 m-3 -translate-y-16 focus:translate-y-0"
+        >
+          Skip to content
+        </a>
         <ThemeProvider attribute="class" enableSystem>
           {children}
           <Toaster />

@@ -22,7 +22,7 @@ type CardLinkProps = LinkProps & {
   children: React.ReactNode;
 };
 
-function CardLink({ children, ...props }: CardLinkProps) {
+export function CardLink({ children, ...props }: CardLinkProps) {
   return (
     <>
       <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-slate-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-slate-800/50 sm:-inset-x-6 sm:rounded-2xl" />

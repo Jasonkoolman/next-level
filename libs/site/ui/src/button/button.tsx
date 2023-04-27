@@ -1,51 +1,51 @@
 import React from 'react';
+import type * as Polymorphic from '@radix-ui/react-polymorphic';
 import { VariantProps, cva } from 'class-variance-authority';
 
 import { classNames } from '@nxl/site/common';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-md text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background',
+  'inline-flex items-center justify-center text-sm text-foreground rounded-md font-semibold gap-x-2 transition-colors disabled:opacity-50 disabled:pointer-events-none',
   {
     variants: {
       variant: {
-        primary: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        destructive:
-          'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-        outline:
-          'border border-input hover:bg-accent hover:text-accent-foreground',
-        secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'underline-offset-4 hover:underline text-primary',
+        primary: 'bg-primary-600 text-white hover:bg-primary-500',
+        outline: 'border border-border hover:bg-border/50 dark:hover:bg-border',
+        ghost: 'bg-transparent hover:bg-border/50 dark:hover:bg-border',
+        link: 'underline-offset-4 hover:underline text-foreground',
       },
       size: {
-        md: 'h-10 py-2 px-4',
-        xs: 'h-7 px-2 rounded-sm',
-        sm: 'h-9 px-3 rounded-md',
-        lg: 'h-11 px-8 rounded-md',
+        xs: 'h-8 py-1 px-3 ',
+        sm: 'h-9 py-1 px-4',
+        base: 'h-10 py-2 px-5',
+        lg: 'h-11 py-2 px-5',
       },
     },
     defaultVariants: {
       variant: 'primary',
-      size: 'md',
+      size: 'base',
     },
   }
 );
 
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants>;
+export type ButtonProps = {
+  as?: 'button' | 'a';
+  children: React.ReactNode;
+} & VariantProps<typeof buttonVariants>;
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => {
-    return (
-      <button
-        className={classNames(buttonVariants({ variant, size }), className)}
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
+type PolymorphicButton = Polymorphic.ForwardRefComponent<'button', ButtonProps>;
+
+const Button = React.forwardRef((props, ref) => {
+  const { as: Tag = 'button', variant, size, className, ...rest } = props;
+
+  return (
+    <Tag
+      className={classNames(buttonVariants({ variant, size }), className)}
+      ref={ref}
+      {...rest}
+    />
+  );
+}) as PolymorphicButton;
 
 Button.displayName = 'Button';
 

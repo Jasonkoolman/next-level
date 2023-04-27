@@ -1,0 +1,14 @@
+---
+title: The subtle superpower of CVA
+date: 2023-04-26
+---
+
+CSS-in-TS libraries such as [Stitches](https://stitches.dev/docs/variants) and [Vanilla Extract](https://vanilla-extract.style/documentation/api/style-variants/) are fantastic options for building type-safe UI components; taking away all the worries of class names and StyleSheet composition.
+
+…but CSS-in-TS (or CSS-in-JS) isn't for everyone.
+
+You may need full control over your StyleSheet output. Your job might require you to use a framework such as Tailwind CSS. You might just prefer writing your own CSS.
+
+Creating variants with the "traditional" CSS approach can become an arduous task; manually matching classes to props and manually adding types.
+
+cva aims to take those pain points away, allowing you to focus on the more fun aspects of UI development.

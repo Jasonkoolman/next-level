@@ -16,7 +16,7 @@ export function Container<TAs extends React.ElementType = 'div'>({
   return (
     <Tag
       className={classNames(
-        'mx-auto max-w-[1340px] px-4 sm:px-6 md:px-10',
+        'mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8',
         className
       )}
       {...rest}

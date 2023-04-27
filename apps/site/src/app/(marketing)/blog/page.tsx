@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from 'site/components/card';
 import { Container } from 'site/components/layout/container';
+import { PageTemplate } from 'site/components/layout/page-template';
 import { Post, allPosts } from 'site/content/generated';
 
 export const metadata = {
@@ -21,18 +22,11 @@ export default async function BlogPage() {
   });
 
   return (
-    <Container className="max-w-4xl py-12 sm:py-14">
-      <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
-        <div className="flex-1 space-y-4 mb-12 sm:mb-14">
-          <Heading as="h1" size="5xl">
-            Blog
-          </Heading>
-          <Text variant="muted" className="sm:text-lg">
-            A blog built using Contentlayer. Posts are written in MDX.
-          </Text>
-        </div>
-      </div>
-      <div className="md:border-l md:border-slate-200 md:pl-6 md:dark:border-slate-700/40">
+    <PageTemplate
+      title={metadata.title}
+      description="A blog built using Contentlayer. Posts are written in MDX."
+    >
+      <section className="md:border-l md:border-slate-200 md:pl-6 md:dark:border-slate-700/40">
         {posts?.length ? (
           <div className="flex max-w-3xl flex-col space-y-16">
             {posts.map((post) => (
@@ -42,8 +36,8 @@ export default async function BlogPage() {
         ) : (
           <p>No posts published.</p>
         )}
-      </div>
-    </Container>
+      </section>
+    </PageTemplate>
   );
 }
 
