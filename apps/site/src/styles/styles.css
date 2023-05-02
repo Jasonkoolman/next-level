@@ -1,11 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './mdx.css';
 
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
+
+    --shiki-color-text: theme('colors.white');
+    --shiki-token-constant: theme('colors.primary.300');
+    --shiki-token-string: theme('colors.primary.300');
+    --shiki-token-comment: theme('colors.zinc.500');
+    --shiki-token-keyword: theme('colors.sky.300');
+    --shiki-token-parameter: theme('colors.pink.300');
+    --shiki-token-function: theme('colors.violet.300');
+    --shiki-token-string-expression: theme('colors.primary.300');
+    --shiki-token-punctuation: theme('colors.zinc.200');
 
     /* Indigo */
     --primary-50: 250 100% 97.6%;
@@ -41,7 +52,7 @@
   }
 
   .dark {
-    --background: 220 47% 7%;
+    --background: 220 46% 7%;
     --foreground: 213 31% 91%;
 
     --primary: 238.7 83.5% 66.7%;

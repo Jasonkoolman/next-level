@@ -1,6 +1,44 @@
 ---
-title: Next.js App Router
+title: The Next.js 13 App Router
 date: 2021-12-24
 ---
 
-https://www.youtube.com/watch?v=gSSsZReIFRk
+# The Next.js 13 App Router: A New Way to Build Hybrid Applications
+
+The Next.js team has recently released version 13 of their popular React-based web application framework. One of the most exciting new features in Next.js 13 is the App Router, a new file-system based router built on top of React Server Components.
+
+## What is the App Router?
+
+The App Router is a new routing system that supports layouts, nested routing, loading states, error handling, and more. It is built on top of React Server Components, which allows you to choose where to render your components based on their purpose. With the App Router, you can split your application into smaller components that can be rendered on the server as Server Components or on the client as Client Components.
+
+## Features of the App Router
+
+The App Router comes with a number of new features that make it easier to build hybrid applications that leverage both the server and the client. Here are some of the key features:
+
+- **Routing:** The App Router is a file-system based router that supports layouts, nested routing, loading states, and error handling. This makes it easier to build complex applications with multiple pages and routes.
+
+- **Rendering:** The App Router supports client-side and server-side rendering with both Client and Server Components. It also supports static and dynamic rendering on the server, as well as streaming on Edge and Node.js runtimes.
+
+- **Data Fetching:** The App Router simplifies data fetching with async/await support in React Components and the fetch() API that aligns with React and the Web Platform.
+
+- **Caching:** The App Router comes with a new HTTP cache and client-side cache that are optimized for Server Components and client-side navigation.
+
+- **Optimizations:** The App Router includes an improved Image Component with native browser lazy loading and a new Font Module with automatic font optimization.
+
+- **Transpilation:** The App Router provides automatic transpilation and bundling of dependencies from local packages (like monorepos) or from external dependencies (node_modules).
+
+- **API:** The Next.js team has updated the API design throughout Next.js to support the App Router. You can refer to the API Reference Section for new APIs.
+
+- **Tooling:** The App Router introduces Turbopack, a Rust-based Webpack replacement that is up to 700x faster.
+
+## Thinking in Server Components
+
+React Server Components introduce a new mental model for building hybrid applications that leverage the server and the client. Instead of rendering your whole application client-side, React now gives you the flexibility to choose where to render your components based on their purpose.
+
+With the App Router, you can split your application into smaller components that can be rendered on the server as Server Components or on the client as Client Components. This aligns with Next.js server-first approach, and makes it easier to build complex applications that are optimized for performance and scalability.
+
+## Conclusion
+
+Next.js 13 App Router is an exciting update that brings numerous improvements and optimizations to the Next.js framework. Its new features, such as the file-system based router, simplified data fetching, and improved caching, make it easier and more efficient to build hybrid applications that leverage both the server and the client.
+
+If you are interested in trying out the new App Router, keep in mind that it is currently in beta and not recommended for production use. However, the Next.js team has provided detailed documentation and a roadmap to help you get started.

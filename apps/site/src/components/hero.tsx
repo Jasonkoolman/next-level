@@ -63,9 +63,9 @@ export function Hero() {
             Next level web application
           </Heading>
           <Text size="lg" variant="muted" className="mt-6">
-            This project is an experiment to see how a modern app using features
-            such as Server Components, static pages, auth, type safety and API
-            routes would work in Next.js 13.
+            This project is an experiment to see how a modern full-stack app
+            using features such as Server Components, static pages, type safety,
+            auth and API routes would work in Next.js 13.
           </Text>
           <div className="mt-10 flex items-center gap-x-3">
             <Button
